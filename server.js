@@ -7,14 +7,13 @@ import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
-import path from "path";
+// import path from "path";
 import { fileURLToPath } from "url";
-// import dotenv from "dotenv"; // dotenv को इम्पोर्ट करें
-// dotenv.config();
+
 
 // __dirname सेट करें
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 // .env कॉन्फ़िगर करें
 dotenv.config();
@@ -36,12 +35,12 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
 // स्टैटिक फोल्डर सर्व करें
-app.use(express.static(path.join(__dirname, "./client/dist")));
+// app.use(express.static(path.join(__dirname, "./client/dist")));
 
 // कोई भी अन्य रूट पर React ऐप लोड करें
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/dist/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./client/dist/index.html"));
+// });
 
 // पोर्ट सेट करें
 const PORT = process.env.PORT ||8080;
